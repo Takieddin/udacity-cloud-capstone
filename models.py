@@ -7,7 +7,7 @@ import os
 database_path = os.environ['DATABASE_URL']
 #database_name = "dd"
 #database_path = "postgres://postgres:1234@{}/{}".format(
- #'localhost:5432', database_name)
+ #'localhost:5432', database_name
 
 db = SQLAlchemy()
 
