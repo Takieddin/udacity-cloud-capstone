@@ -3,6 +3,8 @@ FROM python:3.7-stretch
 
 # Create app directory in Docker
 WORKDIR /app
+COPY . /app
+
 
 # Install app dependencies by copying
 # package.json and package-lock.json
@@ -28,4 +30,4 @@ ENV DATABASE_URL=$argDATABASE_URL
 
 # Define Docker’s behavior when the image  is run
 RUN chmod u+x ./entrypoint.sh
-ENTRYPOINT ["python","app/manager.py","runserver"]
+ENTRYPOINT ["python","./manager.py","runserver"]
