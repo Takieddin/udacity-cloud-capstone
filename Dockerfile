@@ -3,7 +3,7 @@ FROM python:3.7-stretch
 
 # Create app directory in Docker
 WORKDIR /app
-COPY . /app
+COPY . .
 
 
 # Install app dependencies by copying
@@ -29,5 +29,5 @@ ENV DATABASE_URL=$argDATABASE_URL
 # Set the API’s port number
 
 # Define Docker’s behavior when the image  is run
-RUN chmod u+x ./entrypoint.sh
-ENTRYPOINT ["python","./manager.py","runserver"]
+RUN chmod u+x entrypoint.sh
+ENTRYPOINT ["python","manager.py","runserver"]
