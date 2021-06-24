@@ -29,4 +29,3 @@ ENV DATABASE_URL=$argDATABASE_URL
 # Define Docker’s behavior when the image  is run
 RUN chmod u+x ./entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["gunicorn", "-b :8080", "app:app"]

@@ -1,3 +1,3 @@
-export FLASK_APP=app
-flask db migrate
-flask db upgrade
+python manager.py db migrate 
+python manager.py db upgrade 
+python manager.py runserver
