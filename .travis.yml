@@ -19,7 +19,6 @@ script:
   - docker build -t cloud-capstone . --build-arg argAUTH0_DOMAIN=${AUTH0_DOMAIN} --build-arg argALGORITHMS=${ALGORITHMS} --build-arg argAPI_AUDIENCE=${API_AUDIENCE} --build-arg argDATABASE_URL=${DATABASE_URL} 
   - docker images
   - docker tag cloud-capstone ta9i/cloud-capstone
-  - docker run cloud-capstone
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
