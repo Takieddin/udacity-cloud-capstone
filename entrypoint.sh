@@ -1,3 +1,3 @@
-python3 manager.py db migrate 
-python3 manager.py db upgrade 
-python3 manager.py runserver
+python3 manage.py db migrate 
+python3 manage.py db upgrade 
+python3 manage.py runserver
