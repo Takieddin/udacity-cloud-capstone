@@ -28,4 +28,4 @@ ENV DATABASE_URL=$argDATABASE_URL
 
 # Define Docker’s behavior when the image  is run
 RUN chmod u+x entrypoint.sh
-CMD [ "./entrypoint" ] 
+CMD [ "./entrypoint.sh" ] 
