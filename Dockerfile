@@ -27,5 +27,4 @@ ENV DATABASE_URL=$argDATABASE_URL
 # Set the API’s port number
 
 # Define Docker’s behavior when the image  is run
-RUN chmod u+x entrypoint.sh
-ENTRYPOINT ["python","manager.py","runserver"]
+ENTRYPOINT ["ls"]
