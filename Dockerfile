@@ -10,10 +10,8 @@ COPY . .
 # package.json and package-lock.json
 
 # Install dependencies in Docker
-COPY requirements.txt .
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
-COPY . .
 
 
 # Copy app from local environment into the Docker image
