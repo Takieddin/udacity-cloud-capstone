@@ -17,11 +17,13 @@ script:
   - docker --version # print the version for logging
   - docker build -t cloud-capstone . --build-arg argAUTH0_DOMAIN=${AUTH0_DOMAIN} --build-arg argALGORITHMS=${ALGORITHMS} --build-arg argAPI_AUDIENCE=${API_AUDIENCE} --build-arg argDATABASE_URL=${DATABASE_URL} 
   - docker images
-  - docker tag cloud-capstone ta9i/cloud-capstone
+  - docker tag cloud-capstone ${DOCKER_HUB_REPO}
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push ta9i/cloud-capstone
+  - docker push ${DOCKER_HUB_REPO}
+
+  
   - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
   - unzip awscliv2.zip
   - sudo ./aws/install
@@ -44,5 +46,6 @@ after_success:
   - aws --version
   - aws eks --region ${REGION} update-kubeconfig --name ${CLUSTER_NAME}
   - kubectl get svc
+  - ls
 
   - kubectl apply -f deployment.yaml
