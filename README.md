@@ -11,6 +11,7 @@ a user can be one of three role (RBAC):
 - Python 3.7 is required
 - postgres Database is recommended 
 - create virtual enviroment and activate it 
+- install requirements using `pip install -r requirements.txt`
 - export enviroment variables from setup.sh file : ./setup.sh
 - modify the database_path in models.py file with your own database_path 
 - run flask db migrations with `python manage.py db  migrate'
